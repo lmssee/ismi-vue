@@ -1,0 +1,70 @@
+.mi_for_iuuu_context_class {
+  position: relative;
+  width: auto;
+  padding: 10px;
+
+  &>h1 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    text-align: center;
+    margin: 15px auto;
+    padding: 15px;
+    background: #fff;
+    border-radius: 6px 20px 6px 6px;
+    box-shadow: 1px 1px 8px 1pxx #2564;
+    animation-play-state: running;
+    animation: ease-in-out 2.6s 0s infinite alternate MiForIuuuContextBorderRing;
+
+    &:hover {
+      animation-play-state: paused;
+      color: #030;
+      font-weight: 400;
+    }
+  }
+
+  &>h2 {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      position: absolute;
+      left: 0px;
+      text-align: center;
+      box-sizing: content-box;
+      content: '🛞';
+    }
+
+    &:hover::before {
+      animation: mi-content-h2-before 12s 1s infinite alternate ease-in-out;
+    }
+  }
+}
+
+
+
+@keyframes MiForIuuuContextBorderRing {
+
+  from {
+    border-radius: 0px;
+    box-shadow: 1px 1px 8px 1px #0f0;
+  }
+
+  to {
+    border-radius: 12px;
+    box-shadow: 1px 1px 8px 1px #0f0;
+  }
+
+}
+
+@keyframes mi-content-h2-before {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  to {
+    transform: translate(20rem, 0) rotate(3600deg);
+  }
+}

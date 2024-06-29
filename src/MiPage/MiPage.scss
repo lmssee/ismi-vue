@@ -1,0 +1,65 @@
+@import '../assets/base.scss';
+
+/** 覆盖默认样式 */
+html,
+body,
+div,
+a,
+p,
+span,
+ul,
+li,
+ol,
+table,
+tr,
+td,
+th {
+  @include reset-style;
+}
+
+/*** 设定页面为全局  */
+html,
+body,
+div#app {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mi_page_class {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // overflow: hidden;
+  // align-content: first baseline;
+
+  // 含 mi_page_tab-bar 布局设定
+  .mi_page_layout {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+
+    &>div {
+      overflow: auto;
+    }
+
+    .mi_page_tab-bar {
+      position: relative;
+    }
+
+    .mi_page_context {
+      flex-basis: auto;
+      flex-grow: 1;
+      overflow: auto;
+    }
+  }
+
+  .mi_page_footer {
+    flex-basis: auto;
+    background-color: #000;
+    overflow: hidden;
+  }
+}

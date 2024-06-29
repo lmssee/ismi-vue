@@ -1,0 +1,44 @@
+@import '../assets/base.scss';
+
+div {
+  @include reset-style;
+}
+
+.mi_float_back_class {
+  position: relative;
+  // 保证滚动留在本元素，而不会导致去操控不可控的父元素
+  max-height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-direction: column;
+  overflow: auto;
+
+
+  &>a,
+  &>div,
+  &>span,
+  &>p,
+  &>li {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    background-color: none;
+    background: none;
+    text-decoration: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: var(--float-back-before-top);
+    left: var(--float-back-before-left);
+    z-index: 0;
+    width: var(--float-back-before-width);
+    height: var(--float-back-before-height);
+    background-image: var(--float-back-before-back-image);
+    transition: all ease-in 1s;
+    border-radius: var(--float-back-border-radius);
+    box-shadow: var(--float-back-box-shadow);
+  }
+}

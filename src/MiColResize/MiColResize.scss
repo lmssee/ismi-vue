@@ -1,0 +1,10 @@
+@import '../assets/base.scss';
+
+div {
+  @include reset-style();
+}
+
+.mi_col_resize_class {
+  position: absolute;
+  z-index: 2;
+}

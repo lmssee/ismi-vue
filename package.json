@@ -1,0 +1,110 @@
+{
+  "name": "ismi-vue",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "您的大名",
+  "license": "ISC",
+  "description": "这是你的项目描述呀",
+  "main": "out/index.cjs",
+  "module": "out/index.mjs",
+  "typings": "types/index.d.ts",
+  "files": [
+    "exportMjs",
+    "exportTypes",
+    "exportCjs"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./exportMjs/index.mjs",
+        "types": "./exportTypes/index.d.ts"
+      },
+      "require": {
+        "default": "./exportCjs/index.cjs",
+        "types": "./exportTypes/index.d.ts"
+      }
+    },
+    "./resolver": {
+      "import": {
+        "default": "./exportMjs/src/tools/resolver.mjs",
+        "types": "./exportTypes/src/tools/resolver.d.ts"
+      },
+      "require": {
+        "default": "./exportCjs/src/tools/resolver.cjs",
+        "types": "./exportTypes/src/tools/resolver.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "build": "echo '构建部分' && vite build && tsc -p tsconfig.types.json && npx iuuu mc",
+    "create": "echo  '添加一个组件' &&  npx iuuu create",
+    "clean": "npx ixxx rm  node_modules package-lock.json run install",
+    "clear": "npx ixxx rm exportMjs exportCjs exportTypes",
+    "dev": "echo '测试' && vite",
+    "format": "npm run prettier",
+    "lint": "eslint . --ext .vue, .js, .jsx , .cjs, .mjs, .ts ,.tsx ,.cts, mts, --fix --ignore-path .gitignore",
+    "prettier": "npx prettier . --write",
+    "type-check": "vue-tsc --build --force",
+    "test": "vitest",
+    "up": "echo '更新 npm 包' && npx ixxx up -n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmssee/vue-ui"
+  },
+  "keywords": [
+    "ismi-vue"
+  ],
+  "homepage": "https://lmssee.github.io/",
+  "bugs": {
+    "url": "https://github.com/lmssee/vue-ui/issues",
+    "email": "lmssee@outlook.com"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rushstack/eslint-patch": "^1.10.3",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20.14.6",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/runtime-dom": "^3.4.30",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.5.1",
+    "axios": "^1.7.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "jsdom": "^24.1.0",
+    "pinia": "^2.1.7",
+    "prettier": "^3.3.2",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.77.6",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "unplugin-vue-components": "^0.27.1",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-vue-devtools": "^7.3.2",
+    "vitest": "^1.6.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "vue-tsc": "^2.0.21"
+  },
+  "dependencies": {
+    "ismi-command": "^0.0.7",
+    "ismi-js-tools": "^0.0.2",
+    "ismi-node-tools": "^0.0.9"
+  }
+}

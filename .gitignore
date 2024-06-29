@@ -1,0 +1,10 @@
+# dependencies 依赖文件
+node_modules
+
+# build file 打包文件
+exportMjs
+exportCjs
+exportTypes
+# mac  
+.DS_Store
+

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "exportTypes/"
+  },
+  "exclude": ["node_modules", "exportTypes", "static", "main.ts", "vite.config.ts"]
+}

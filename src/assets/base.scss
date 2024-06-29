@@ -1,0 +1,49 @@
+/** 这里是 scss 的定义的全局可用（使用前需要引入）的样式  */
+@import './color.scss';
+
+
+/* 设置滚动条的整体样式 */
+::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+  /* 滚动条的宽度 */
+  display: initial !important;
+}
+
+/* 滚动条的滑块（即拖动部分） */
+::-webkit-scrollbar-thumb {
+  background: #0f16;
+  /* 滑块颜色 */
+  border-radius: 5px;
+
+  /* 滑块圆角 */
+  &:hover {
+    background: #0ff;
+  }
+}
+
+/* 滚动条的轨道 */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* 轨道颜色 */
+  border-radius: 10px;
+  /* 轨道圆角 */
+}
+
+/* 滚动条滑块不可用时（例如，内容不足以产生滚动） */
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ddd;
+  /* 滑块颜色 */
+}
+
+
+@mixin reset-style {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.68rem;
+  text-decoration: none;
+  z-index: 1;
+  // box-sizing: border-box;
+}

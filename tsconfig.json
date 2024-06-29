@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "importHelpers": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "strict": true,
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": false
+  },
+  "include": [
+    "main.ts",
+    "static/app.tsx",
+    "src/index.ts",
+    "src/**/**/*.tsx",
+    "static/**/**/*.tsx",
+    "src/**/**/*.ts",
+    "static/**/**/*.ts",
+    "src/tools/**/*.ts",
+    "index.ts"
+  ],
+  "exclude": ["node_modules", "exportTypes", ""]
+}

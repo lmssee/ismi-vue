@@ -1,0 +1,175 @@
+@import '../assets/base.scss';
+
+div,
+pre,
+code,
+span,
+a {
+  @include reset-style();
+  z-index: 1;
+}
+
+$lineHeight: var(--mi-code-block-line-height);
+
+$background: #252525;
+
+
+/** 代码区域样式  */
+.mi_code_block_class {
+  position: relative;
+  width: 80%;
+  margin: 28px auto;
+  padding: 20px 0px 8px;
+  background: $background;
+  border-radius: 13px 13px 8px 8px;
+  transition: all .6s ease-in;
+
+  &:hover {
+    box-shadow: 1px -1px 12px 2px $background;
+    transform: translate(1px, -1px);
+    transition: all .6s ease-in;
+
+    .mi_code_block_title {
+
+      // 代码类型
+      div:only-child,
+      div:nth-child(2) {
+        transition: all 6s ease-in-out;
+        transform: rotateX(3600deg);
+      }
+    }
+  }
+
+
+  // 头部
+  .mi_code_block_title {
+    padding-bottom: 20px;
+    height: $lineHeight;
+    line-height: $lineHeight;
+    border-bottom: 1px solid #f0f4;
+    // overflow: hidden;
+
+    // 复制
+    div:first-child {
+      cursor: copy;
+      float: left;
+      width: $lineHeight;
+      height: $lineHeight;
+      line-height: $lineHeight;
+      text-align: center;
+    }
+
+    // 代码类型展示
+    @mixin fontStyle {
+      color: #0f0;
+      cursor: unset;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+    }
+
+
+    // 代码类型展示
+    div:nth-child(2) {
+      max-width: 60%;
+      float: right;
+      padding: 0px 10px;
+      @include fontStyle();
+    }
+
+    // 代码类型展示（不允许复制时）
+    div:only-child {
+      width: 100%;
+      text-align: left;
+      @include fontStyle();
+    }
+  }
+
+  // 代码区
+  &>pre {
+    width: auto;
+    overflow: auto;
+
+    // 标记为代码，禁止翻译
+    &>code {
+      width: auto;
+      display: block;
+      line-height: 1rem;
+      color: #dfe;
+
+      // 代码行
+      span.mi-code-block-line {
+        display: block;
+        position: relative;
+        width: auto;
+        background: $background;
+        height: $lineHeight;
+        line-height: $lineHeight;
+        font-size: .96rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        &:first-child {
+          margin-top: 16px;
+        }
+
+        span:nth-child(2) {
+          vertical-align: top;
+        }
+
+        // 前面的行表示 
+        span.mi-code-block-line-number {
+          display: inline-block;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0rem;
+          left: 0rem;
+          width: $lineHeight;
+          height: $lineHeight;
+          line-height: $lineHeight;
+          font-weight: 600;
+          background: $background;
+          color: #999;
+          text-align: center;
+
+          &>span:nth-child(2) {
+            display: none;
+          }
+
+        }
+
+        // 光标所在行暂时不认同的样式
+        &:hover {
+          position: relative;
+          background-color: #000;
+          color: #ff0;
+          z-index: 2;
+          border-radius: 10px;
+          box-shadow: 1px -1px 2rem #af66;
+
+          // 光标所在行文本展示
+          span.mi-code-block-line-number {
+            background-color: #000;
+
+            /** 隐藏掉数字显示  */
+            &>span:nth-child(1) {
+              display: none;
+            }
+
+            // 显示粘贴图标
+            &>span:nth-child(2) {
+              cursor: copy;
+              display: block;
+              font-size: 0.8rem;
+              font-weight: 300;
+              height: $lineHeight;
+              line-height: $lineHeight;
+              box-shadow: 0px 1px 6px 1px #999f;
+              border-radius: 0px 6px 6px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
