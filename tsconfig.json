@@ -23,7 +23,8 @@
     "src/**/**/*.ts",
     "static/**/**/*.ts",
     "src/tools/**/*.ts",
-    "index.ts"
+    "index.ts",
+    "src/tools/resolver_ts"
   ],
   "exclude": ["node_modules", "exportTypes", ""]
 }

@@ -2,7 +2,6 @@ import { computed, defineComponent, onMounted, ref } from 'vue';
 import type { App } from 'vue';
 import './MiCodeBlock.scss';
 import { copyText } from '../tools';
-import { MiPage } from '../MiPage/MiPage';
 
 /**  组件 MiCodeBlock 内容部分
  *

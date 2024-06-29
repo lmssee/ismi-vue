@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import Components from 'unplugin-vue-components/vite';
 import terser from '@rollup/plugin-terser';
-import { MiUiLibraryResolver } from './src/tools/resolver';
 
 export default defineConfig({
   build: {
@@ -51,7 +50,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     Components({
-      resolvers: [MiUiLibraryResolver()],
+      resolvers: [],
     }),
   ],
 });

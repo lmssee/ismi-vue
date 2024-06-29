@@ -1,27 +1,7 @@
-import {
-  computed,
-  defineComponent,
-  nextTick,
-  onMounted,
-  onUnmounted,
-  reactive,
-  ref,
-  defineProps,
-} from 'vue';
-import type { App, ComputedRef, PropType, Ref, StyleValue } from 'vue';
+import { computed, defineComponent, nextTick, onMounted, onUnmounted, reactive, ref } from 'vue';
+import type { App, PropType, Ref, StyleValue } from 'vue';
 import { useMiEventListener, useMiThrottle, useMiObserveElement } from '../tools/index';
 import './MiFloatBack.scss';
-import { type } from 'os';
-
-const props = defineProps<{
-  background?: string;
-  matchClass?: string;
-  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  type?: 'full' | 'block';
-  floatImage?: string;
-  height?: string;
-  width?: string;
-}>();
 
 /**
  *  组件 MiFloatBack 内容部分
@@ -90,9 +70,9 @@ const MiFloatBack = defineComponent({
     },
     type: {
       type: String as PropType<'block' | 'full'>,
-      // validator(value: 'block' | 'full') {
-      //   return ['block', 'full'].includes(value);
-      // },
+      validator(value: 'block' | 'full') {
+        return ['block', 'full'].includes(value);
+      },
       default: 'block',
     },
     scrollSlow: {

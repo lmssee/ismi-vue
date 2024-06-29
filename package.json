@@ -1,10 +1,10 @@
 {
   "name": "ismi-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "author": "您的大名",
+  "author": "lmssee",
   "license": "ISC",
-  "description": "这是你的项目描述呀",
+  "description": "A rudimentary Vue UI",
   "main": "out/index.cjs",
   "module": "out/index.mjs",
   "typings": "types/index.d.ts",
@@ -36,7 +36,7 @@
     }
   },
   "scripts": {
-    "build": "echo '构建部分' && vite build && tsc -p tsconfig.types.json && npx iuuu mc",
+    "build": "echo '构建部分'  && vite build  && tsc -p tsconfig.types.json && npx iuuu mc",
     "create": "echo  '添加一个组件' &&  npx iuuu create",
     "clean": "npx ixxx rm  node_modules package-lock.json run install",
     "clear": "npx ixxx rm exportMjs exportCjs exportTypes",
@@ -46,18 +46,19 @@
     "prettier": "npx prettier . --write",
     "type-check": "vue-tsc --build --force",
     "test": "vitest",
+    "version": "npm version patch --force  --no-git-tag-version  --allow-same-version=true",
     "up": "echo '更新 npm 包' && npx ixxx up -n"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lmssee/vue-ui"
+    "url": "https://github.com/lmssee/ismi-vue"
   },
   "keywords": [
     "ismi-vue"
   ],
   "homepage": "https://lmssee.github.io/",
   "bugs": {
-    "url": "https://github.com/lmssee/vue-ui/issues",
+    "url": "https://github.com/lmssee/ismi-vue/issues",
     "email": "lmssee@outlook.com"
   },
   "publishConfig": {
@@ -73,7 +74,7 @@
     "@rushstack/eslint-patch": "^1.10.3",
     "@tsconfig/node20": "^20.1.4",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20.14.6",
+    "@types/node": "^20.14.9",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -92,15 +93,15 @@
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.77.6",
     "tslib": "^2.6.3",
-    "typescript": "^5.4.5",
-    "unplugin-vue-components": "^0.27.1",
-    "vite": "^5.3.1",
+    "typescript": "^5.5.2",
+    "unplugin-vue-components": "^0.27.2",
+    "vite": "^5.3.2",
     "vite-plugin-dts": "^3.9.1",
-    "vite-plugin-vue-devtools": "^7.3.2",
+    "vite-plugin-vue-devtools": "^7.3.5",
     "vitest": "^1.6.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3",
-    "vue-tsc": "^2.0.21"
+    "vue-router": "^4.4.0",
+    "vue-tsc": "^2.0.22"
   },
   "dependencies": {
     "ismi-command": "^0.0.7",
